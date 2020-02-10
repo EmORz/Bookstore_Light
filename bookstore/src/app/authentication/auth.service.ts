@@ -9,16 +9,28 @@ const appSecret = "3e63a5007d244f19b66916e50033fb18";
 const registerUrl = `https://baas.kinvey.com/user/${appKey}`;
 const loginUrl = `https://baas.kinvey.com/user/${appKey}/login`;
 const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
+
 @Injectable()
 export class AuthService{
 
     private currentAuthToken: string;
 
-    constructor(private http: HttpClient){
+    currentUser: { model: LoginModel } = null;
 
+    get isLogged() {
+      return !!this.currentUser;
+    }
+
+    constructor(private http: HttpClient){
+        const currentUser = localStorage.getItem('current-user');
+        this.currentUser = currentUser ? JSON.parse(currentUser) : null;
     }
 
     login(model: LoginModel){
+
+        localStorage.setItem('current-user', JSON.stringify({ model}));
+        this.currentUser = { model };
+        debugger
 
         return this.http.post(loginUrl, JSON.stringify(model), { 
             headers: this.createAuthHeaders('Basic')

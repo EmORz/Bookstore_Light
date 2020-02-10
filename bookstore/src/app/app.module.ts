@@ -14,6 +14,8 @@ import { AuthService } from './authentication/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListComponent } from './product/list/list.component';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+  
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

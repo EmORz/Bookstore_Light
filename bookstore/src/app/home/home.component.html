@@ -1,1 +1,9 @@
-<p>home works!</p>
+
+<div class="col-md-4">
+    <app-list (selectProduct)="selectProductHandler($event)"></app-list>
+    pop
+  </div>
+  <div class="col-md-8">
+    <app-detail [selectedCause2]="selectedCause"></app-detail>
+  </div>
+

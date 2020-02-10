@@ -5,20 +5,20 @@
     
     <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
-    <li *ngIf="authService.checkIfLogged()" class="nav-item active">
-    <a class="nav-link" href="/home">Home </a>
+    <li class="nav-item active">
+    <a  *ngIf="authService.checkIfLogged()" class="nav-link" href="/home">Home </a>
     </li>
-    <li *ngIf="!authService.checkIfLogged()"  class="nav-item">
-    <a  class="nav-link" href="/login">Login</a>
+    <li  class="nav-item">
+    <a *ngIf="!authService.checkIfLogged()"   class="nav-link" href="/login">Login</a>
     </li>
-    <li *ngIf="!authService.checkIfLogged()"  class="nav-item">
-    <a  class="nav-link" href="/register">Register</a>
+    <li  class="nav-item">
+    <a *ngIf="!authService.checkIfLogged()" class="nav-link" href="/register">Register</a>
     </li>
-    <li *ngIf="authService.checkIfLogged()"  class="nav-item">
-    <a  class="nav-link" (click)="logout()">Logout</a>
+    <li   class="nav-item">
+    <a *ngIf="authService.checkIfLogged()"  class="nav-link" (click)="logout()">Logout</a>
     </li>
-    <li *ngIf="!authService.checkIfLogged()"  class="nav-item">
-        <a  class="nav-link" href="/about">About</a>
+    <li class="nav-item">
+        <a  *ngIf="!authService.checkIfLogged()" class="nav-link" href="/about">About</a>
         </li>
     </ul>
     </div>
