@@ -15,19 +15,12 @@ const routes: Routes = [
       },    
       {
         path: 'create',
-        component: CreateComponent,
-        canActivate: [AuthGuard],
-        data: {
-          isLogged: true
-        }
+        component: CreateComponent
+     
       },  
       {
         path: 'detail/:id',
-        component: DetailComponent,
-        canActivate: [AuthGuard],
-        data: {
-          isLogged: true
-        }
+        component: DetailComponent
       }
       
     ]

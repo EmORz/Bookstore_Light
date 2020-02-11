@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.authService.authtoken=data['_kmd']['authtoken'];
     localStorage.setItem('authtoken', data['_kmd']['authtoken']);
     localStorage.setItem('username', data['username']);
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('');
 
   }
 
