@@ -6,7 +6,9 @@ import { IProduct } from '../shared/interfaces/product';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
+
   product: IProduct[];
 
   readonly selectedProduct: IProduct;
@@ -19,13 +21,15 @@ export class ProductService {
     );
   }
 
-  // donate(amount: number) {
-  //   return this.http.put<IProduct>(`http://localhost:3000/causes/${this.selectedCause._id}`, {
-  //     body: { collectedAmount: this.selectedCause.collectedAmount + amount }
-  //   });
-  // }
-
   selectProduct(product: IProduct) {
     (this as any).selectedProduct = product;
   }
+
+  purchase(price: number){
+
+    return this.http.patch<IProduct>(`http://localhost:3000/causes/${this.selectedProduct.id}`, {
+      body: { collectedAmount: this.selectedProduct.collectedAmount + price }
+    });
+  }
+
 }

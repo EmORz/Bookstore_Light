@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   form: FormGroup;
 
   get currentUser() {
-    return this.userService.currentUser;
+    return this.authService.currentUser;
   }
 
   constructor(

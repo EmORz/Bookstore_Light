@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/shared/interfaces/product';
@@ -10,6 +10,7 @@ import { IProduct } from 'src/app/shared/interfaces/product';
 })
 export class DetailComponent implements OnInit {
 
+  @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>
   @Input() selectedCause2: IProduct;
   
   get selectedCause(){return this.productService.selectedProduct}
@@ -21,5 +22,15 @@ export class DetailComponent implements OnInit {
       this.productService.selectProduct(product);
   })
 }
+
+makePurchase(){
+  debugger
+  this.productService.purchase(+this.amountInput.nativeElement.value).subscribe(() =>{
+    this.productService.load();
+    this.amountInput.nativeElement.value = '';
+
+  })
+}
+
 }
 

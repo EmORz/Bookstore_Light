@@ -2,19 +2,22 @@
   "causes": [
     {
       "id": 1,
-      "cause": "Николай Островски => Как се каляваше стоманата",
-      "description": "Работата ми над романа Как се каляваше стоманата. Преди да разкажа как съм работил над романа, ще кажа няколко думи за себе си. В бунтовните години на Гражданската война и след нея се случи така, че здравето ми се разруши до краен предел. През последните години леглото стана мое постоянно местожителство. Аз не ходя, лежа неподвижно и преди две години изгубих лявото си око, с което само можех да виждам. Налице са всички предпоставки, за да кажа — при такива условия е невъзможно да се работиАз лично мислех, че слепотата ми създава непреодолими препятствия за работа, тъй като не знаех може ли да се записват от чужди ръце всички ония най-разнородни и често трудно уловими мисли, които искаш да запишеш на хартия.",
+      "cause": "Travelling to Abu Dhabi",
+      "description": "Aliquip in reprehenderit eu exercitation sint sunt dolor ut culpa incididunt dolor nulla. Quis mollit et sit esse est quis nisi velit. Esse minim ad pariatur fugiat. Sint officia magna elit consequat consequat proident irure cupidatat commodo elit culpa mollit veniam amet. Magna culpa aliqua sint voluptate eu duis sint mollit est sit ut fugiat deserunt. Tempor aliqua eiusmod fugiat qui do eu amet dolore sunt. Nostrud est nisi amet enim deserunt et.",
       "neededAmount": 4.4435,
       "collectedAmount": 6.1543,
-      "imageUrl": "https://assets.chitanka.info/thumb/?book-cover/11/4461.120.jpg"
+      "imageUrl": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/03/26/08/trip-advisor-1.jpg"
     },
-      {
+    {
       "id": 2,
-      "cause": "Трактат за живописта",
-      "description": "Трактат за живописта несъмнено е водещият сред теоретичните трудове на Леонардо да Винчи, в който мнозина са търсили",
-	   "neededAmount": 4.4435,
-      "collectedAmount": 6.1543,
-      "imageUrl": "https://iztok-zapad.eu/image/cache/catalog/books/picture_1398-650x1000.jpg"
+      "cause": "Travelling to Niagara Falls",
+      "description": "Enim laboris Lorem esse exercitation commodo. Consectetur officia cillum officia minim est mollit dolor do aliquip consectetur incididunt ad veniam consectetur. Excepteur cupidatat pariatur occaecat amet exercitation eu dolore ut. Proident quis ullamco irure culpa cillum nostrud eu et cillum eu. Duis non velit magna mollit ea incididunt. Tempor sint dolore ad cillum incididunt. Nulla consequat voluptate commodo aute ut.",
+      "neededAmount": 8.0142,
+      "collectedAmount": 2.2178,
+      "imageUrl": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/e3/a0/6a.jpg",
+      "body": {
+        "collectedAmount": 11.2178
+      }
     }
   ]
 }
