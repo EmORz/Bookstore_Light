@@ -14,13 +14,19 @@ const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
 export class AuthService{
 
     private currentAuthToken: string;
+  isLogged: any;
+  currentUser: { model: any } = null;
 
     constructor(private http: HttpClient){
+        const currentUser = localStorage.getItem('current-user');
+        this.currentUser = currentUser ? JSON.parse(currentUser) : null;
 
     }
 
     login(model: LoginModel){
 
+        localStorage.setItem('current-user', JSON.stringify({ model}));
+        this.currentUser = {model };
         return this.http.post(loginUrl, JSON.stringify(model), { 
             headers: this.createAuthHeaders('Basic')
         });
@@ -33,6 +39,8 @@ export class AuthService{
     }
     logout(){
       debugger
+      this.currentUser = null;
+      localStorage.removeItem('current-user');
         return this.http.post(logoutUrl, {}, { 
             headers: this.createAuthHeaders('Kinvey')
         });

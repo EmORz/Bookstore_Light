@@ -25,7 +25,7 @@ export class UserService {
   }
 
   logout() {
-    debugger
+
     this.currentUser = null;
     localStorage.removeItem('current-user');
   }

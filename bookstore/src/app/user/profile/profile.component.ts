@@ -36,9 +36,14 @@ export class ProfileComponent implements OnInit {
   }
 
   logout() {
-    debugger
-    this.authService.logout();
-    this.router.navigate(['about']);
+    this.authService.logout()
+    .subscribe( data => {
+      localStorage.clear();
+      this.authService.authtoken = "";
+      this.userService.logout();
+      this.router.navigateByUrl('/login')
+
+    })
   }
 
 }

@@ -1,9 +1,9 @@
 <h1>Products</h1>
 <div class="row">
 
-  <div class="col-xs-12" *ngIf="products">
+  <div class="col-md-9" *ngIf="products">
     <a *ngFor="let cause of products" (click)="selectProductHandler(cause)" class="list-group-item clearfix">
-      <div class="pull-left">
+      <div class="row">
         <h4 class="list-group-item-heading">{{cause.cause}}</h4>
       </div>
       <div class="pull-right">
@@ -12,3 +12,34 @@
     </a>
   </div>
 </div>
+
+
+<div class="row" data-gutter="15">                
+  <div class="col-sm-4 col-md-3 col-xs-6">
+<div class="product max-height-custom">
+
+  <a *ngFor="let cause of products" (click)="selectProductHandler(cause)" >
+    <div class="product-img-wrap text-center">
+      <img [src]="cause.imageUrl" class="custom-responsive-style loaded" data-was-processed="true">                                     
+      </div>     
+                                <a class="product-link" href="#"></a>
+                            <div class="product-caption">
+     
+      <h5 class="product-caption-title">{{cause.cause}}</h5>
+      <h6 class="product-caption-author">????????????</h6>
+      
+      <div class="product-caption-discount">
+          <span class="product-caption-price">{{cause.neededAmount}} лв.</span>
+       
+      </div>
+      </div>
+    
+  </a>
+
+</div>
+</div>
+ 
+
+</div>
+        
+    
