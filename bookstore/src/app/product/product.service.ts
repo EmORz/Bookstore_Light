@@ -16,6 +16,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   load(id?: number) {
+    
     return this.http.get<IProduct[] | IProduct>(`http://localhost:3000/causes${id ? `/${id}` : ''}`).pipe(
       tap((products) => this.product = [].concat(products))
     );

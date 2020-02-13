@@ -1,40 +1,29 @@
 <h1>Products</h1>
-<div class="row">
 
-  <div class="col-md-9" *ngIf="products">
-    <a *ngFor="let cause of products" (click)="selectProductHandler(cause)" class="list-group-item clearfix">
-      <div class="row">
-        <h4 class="list-group-item-heading">{{cause.cause}}</h4>
-      </div>
-      <div class="pull-right">
-        <img [src]="cause.imageUrl" alt="" class="img-responsive">
-      </div>
-    </a>
-  </div>
-</div>
-
-
-<div class="row" data-gutter="15">                
+<div class="col" data-gutter="15">                
   <div class="col-sm-4 col-md-3 col-xs-6">
 <div class="product max-height-custom">
 
-  <a *ngFor="let cause of products" (click)="selectProductHandler(cause)" >
+  <div *ngFor="let cause of products" (click)="selectProductHandler(cause)" >
     <div class="product-img-wrap text-center">
-      <img [src]="cause.imageUrl" class="custom-responsive-style loaded" data-was-processed="true">                                     
+      <div class="row">
+        <h4 class="list-group-item-heading">{{cause.cause}}</h4>
+      </div>
+      <div>
+        <h6 class="product-caption-author">{{cause.author}}</h6>
+      </div>
+      <img [src]="cause.imageUrl" class="img" data-was-processed="true">                                     
       </div>     
                                 <a class="product-link" href="#"></a>
-                            <div class="product-caption">
-     
-      <h5 class="product-caption-title">{{cause.cause}}</h5>
-      <h6 class="product-caption-author">????????????</h6>
-      
+                            <div class="product-caption">      
       <div class="product-caption-discount">
           <span class="product-caption-price">{{cause.neededAmount}} лв.</span>
        
       </div>
       </div>
+      <hr>
     
-  </a>
+    </div>
 
 </div>
 </div>
@@ -42,4 +31,5 @@
 
 </div>
         
+
     

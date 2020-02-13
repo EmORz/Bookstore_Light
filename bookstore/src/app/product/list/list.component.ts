@@ -9,13 +9,14 @@ import { ProductService } from '../product.service';
 })
 export class ListComponent implements OnInit {
 
-  get products() { return this.productService.product; }
+  get products() {  return this.productService.product; }
 
   @Output() selectProduct: EventEmitter<IProduct> = new EventEmitter();
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    
     this.productService.load().subscribe();
   }
 

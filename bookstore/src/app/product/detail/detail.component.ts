@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
   constructor(private productService: ProductService  ,  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.productService.load(+this.activatedRoute.snapshot.params.id).subscribe((product: IProduct) => {
       this.productService.selectProduct(product);
   })

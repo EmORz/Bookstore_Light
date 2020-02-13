@@ -2,11 +2,15 @@
   "causes": [
     {
       "id": 1,
-      "cause": "Travelling to Abu Dhabi",
-      "description": "Aliquip in reprehenderit eu exercitation sint sunt dolor ut culpa incididunt dolor nulla. Quis mollit et sit esse est quis nisi velit. Esse minim ad pariatur fugiat. Sint officia magna elit consequat consequat proident irure cupidatat commodo elit culpa mollit veniam amet. Magna culpa aliqua sint voluptate eu duis sint mollit est sit ut fugiat deserunt. Tempor aliqua eiusmod fugiat qui do eu amet dolore sunt. Nostrud est nisi amet enim deserunt et.",
+      "cause": "Атлас на щастието",
+      "author": "Хелън Ръсел",
+      "description": "Околосветско пътешествие в търсене на тайните на щастието!Оптимизмът не е лекомислие – той е необходимост!От Австралия до",
       "neededAmount": 4.4435,
       "collectedAmount": 6.1543,
-      "imageUrl": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/03/26/08/trip-advisor-1.jpg"
+      "imageUrl": "https://i2.helikon.bg/products/7997/21/217997/217997_b.jpg?h=263",
+      "body": {
+        "collectedAmount": 42.1543
+      }
     },
     {
       "id": 2,
