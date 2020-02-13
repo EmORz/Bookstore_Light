@@ -27,9 +27,9 @@ export class ProductService {
   }
 
   purchase(price: number){
-
+debugger
     return this.http.patch<IProduct>(`http://localhost:3000/causes/${this.selectedProduct.id}`, {
-      body: { collectedAmount: this.selectedProduct.collectedAmount + price }
+      body: { collectedAmount:  this.selectedProduct.collectedAmount * price }
     });
   }
 

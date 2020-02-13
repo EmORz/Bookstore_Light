@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
   @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>
   @Input() selectedCause2: IProduct;
   
-  get selectedCause(){return this.productService.selectedProduct}
+  get selectedCause(){  return this.productService.selectedProduct}
 
   constructor(private productService: ProductService  ,  private activatedRoute: ActivatedRoute) { }
 
