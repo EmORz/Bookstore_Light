@@ -1,34 +1,66 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a class="navbar-brand" routerLink="">BookStore Light</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"></button>
-        <span class="navbar-toggler-icon"></span>
-        
-        <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-       
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">BookStore Light</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    ></button>
+    <span class="navbar-toggler-icon"></span>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <a  *ngIf="authService.checkIfLogged()" class="nav-link" routerLink="/user/profile">User </a>
+          <a
+            *ngIf="authService.checkIfLogged()"
+            class="nav-link"
+            routerLink="/user/profile"
+            >User
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a
+            *ngIf="authService.checkIfLogged() && authService.roles"
+            class="nav-link"
+            routerLink="/product/create"
+            >Create
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="">Home </a>
-            </li>
-        <li  class="nav-item">
-        <a *ngIf="!authService.checkIfLogged()"   class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li  class="nav-item">
-        <a *ngIf="!authService.checkIfLogged()" class="nav-link" routerLink="/register">Register</a>
-        </li>
-        <li   class="nav-item">
-        <a *ngIf="authService.checkIfLogged()"  class="nav-link" (click)="logout()">Logout</a>
+          <a class="nav-link" routerLink="">Home </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/about">About</a>
+          <a
+            *ngIf="!authService.checkIfLogged()"
+            class="nav-link"
+            routerLink="/login"
+            >Login</a
+          >
         </li>
-        </ul>
-        </div>
+        <li class="nav-item">
+          <a
+            *ngIf="!authService.checkIfLogged()"
+            class="nav-link"
+            routerLink="/register"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="authService.checkIfLogged()"
+            class="nav-link"
+            (click)="logout()"
+            >Logout</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+      </ul>
     </div>
-
-    </nav>
-
-  
+  </div>
+</nav>

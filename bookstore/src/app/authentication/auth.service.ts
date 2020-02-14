@@ -14,6 +14,7 @@ const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
 export class AuthService{
 
     private currentAuthToken: string;
+    private currentRoleToken: string;
   isLogged: any;
   currentUser: { model: any } = null;
 
@@ -52,6 +53,12 @@ export class AuthService{
 
     get authtoken(){
         return this.currentAuthToken;
+    }
+    get roles(){
+        return this.currentRoleToken;
+    }
+    set roles(value: string){
+         this.currentRoleToken = value ;
     }
     set authtoken(value: string){
         this.currentAuthToken = value;

@@ -13,6 +13,11 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  isAdmin(){
+    if(this.authService.roles){
+      return true
+    }
+  }
   logout(){
     this.authService.logout()
     .subscribe( data => {
