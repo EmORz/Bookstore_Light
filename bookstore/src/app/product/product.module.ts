@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { DetailComponent } from './detail/detail.component';
 import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,8 +13,9 @@ import { CreateComponent } from './create/create.component';
   declarations: [ListComponent, DetailComponent, CreateComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    FormsModule
   ],
-  exports: [ListComponent, DetailComponent]
+  exports: [ListComponent, DetailComponent, CreateComponent]
 })
 export class ProductModule { }

@@ -1,73 +1,130 @@
-<h3 class="mobile-fondsize-20 text-muted text-center">nnnnn</h3>
+
+
+<h3 class="mobile-fondsize-20 text-muted text-center">Create product</h3>
 <hr class="w-50" />
 <div class="container">
-<form asp-controller="Products" asp-action="Create" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="Title" class="control-label"></label>
-            <input asp-for="Title" class="form-control" />
-            <span asp-validation-for="Title" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="Author" class="control-label"></label>
-            <input asp-for="Author" class="form-control" />
-            <span asp-validation-for="Author" class="text-danger"></span>
-        </div>
-        <div class="form-group col-md-6">
-            <label asp-for="ProductTypes" class="control-label"></label>
-            <select asp-for="ProductTypes" class="form-control">
-                <option value="book">Book</option>
-                <option value="music">Music</option>
-                <option value="film">Film</option>
-                <option value="other">Other</option>
-            </select>
-            @*<input asp-for="ProductTypes" class="form-control" />*@
-            <span asp-validation-for="ProductTypes" class="text-danger"></span>
-        </div>
+    <form #createForm="ngForm" (ngSubmit)="create()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              pattern="^[A-Z][a-z\d]+$"
+              name="title"
+              [(ngModel)]="model.title"
+              #title="ngModel"
+            />
+            <div
+              [hidden]="title.valid || title.pristine"
+              class="alert alert-danger"
+            >
+              Username must start with ..........
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              required
+              pattern="^[A-Z][a-z\d]+$"
+              name="author"
+              [(ngModel)]="model.author"
+              #author="ngModel"
+            />
+            <div
+              [hidden]="author.valid || author.pristine"
+              class="alert alert-danger"
+            >
+              Author must start with ..........
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              required
+              pattern=""
+              name="price"
+              [(ngModel)]="model.price"
+              #price="ngModel"
+            />
+            <div
+              [hidden]="price.valid || price.pristine"
+              class="alert alert-danger"
+            >
+              Price must start with ..........
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="quantity"
+              required
+              name="quantity"
+              [(ngModel)]="model.quantity"
+              #quantity="ngModel"
+            />
+            <div
+              [hidden]="quantity.valid || quantity.pristine"
+              class="alert alert-danger"
+            >
+              Quantity must start with ..........
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              required
+              pattern="^[A-Z][a-z\d]+$"
+              name="description"
+              [(ngModel)]="model.description"
+              #description="ngModel"
+            />
+            <div
+              [hidden]="description.valid || description.pristine"
+              class="alert alert-danger"
+            >
+              description must start with ..........
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="picture">Picture</label>
+            <input
+              type="text"
+              class="form-control"
+              id="picture"
+    
         
-        <hr class="my-1" />
-  
-    </div>
-   
-    <div class="form-group">
-        <label asp-for="Quantity" class="control-label"></label>
-        <input asp-for="Quantity" class="form-control" />
-        <span asp-validation-for="Quantity" class="text-danger"></span>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="Price" class="control-label"></label>
-            <input asp-for="Price" class="form-control" />
-            <span asp-validation-for="Price" class="text-danger"></span>
-        </div>
-    </div>
-
- 
-
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="Description" class="control-label"></label>
-            <textarea asp-for="Description" placeholder="въведи описание" class="form-control"></textarea>
-              
-            <span asp-validation-for="Description" class="text-danger"></span>
-        </div>
-    </div>
-   
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label asp-for="Picture" class="text-primary h5">Picture</label>
-        </div>
-        <input type="file"
-               class="form-control text-primary text-center"
-               id="picture"
-               placeholder="Picture..."
-               asp-for="Picture">
-        <span asp-validation-for="Picture" class="text-danger"></span>
-    </div>
-
-    <div class="form-group text-center">
-        <button type="submit" value="" class="btn btn-primary">Създай продукт</button>
-    </div>
-</form>
+              name="picture"
+              [(ngModel)]="model.picture"
+              #picture="ngModel"
+            />
+            <div
+              [hidden]="picture.valid || picture.pristine"
+              class="alert alert-danger"
+            >
+              Picture  must start with ..........
+            </div>
+          </div>
+          <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="createForm.form.invalid"
+        >
+          Create
+        </button>
+    </form>
 </div>
+
+

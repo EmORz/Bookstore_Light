@@ -1,93 +1,142 @@
-{{model | json}}
+{{ model | json }}
 
 <div class="container">
-<h1>Registration Form</h1>
-<form #registrationForm="ngForm" (ngSubmit)="register()">
-<div class="form-group">
-<label for="username">Username</label>
-<input type="text" class="form-control" id="username"
-required
-pattern="^[A-Z][a-z\d]+$"
-name="username"
-[(ngModel)]="model.username"
-#username="ngModel">
-<div [hidden]="username.valid || username.pristine" class="alert alert-danger">
-Username must start with ..........
-</div>
-</div>
-<div class="form-group">
-<label for="password">Password</label>
-<input type="password" class="form-control" id="password"
-required
-pattern="^[A-Za-z\d]{4,16}$"
-name="password"
-[(ngModel)]="model.password"
-#password="ngModel">
-<div [hidden]="password.valid || password.pristine" class="alert alert-danger">
-    Password must start with ..........
+  <h1>Registration Form</h1>
+  <form #registrationForm="ngForm" (ngSubmit)="register()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        required
+        pattern="^[A-Z][a-z\d]+$"
+        name="username"
+        [(ngModel)]="model.username"
+        #username="ngModel"
+      />
+      <div
+        [hidden]="username.valid || username.pristine"
+        class="alert alert-danger"
+      >
+        Username must start with ..........
+      </div>
     </div>
-</div>
-<div class="form-group">
-<label for="confirmPassword">Confirm Password</label>
-<input type="password" class="form-control" id="confirmPassword"
-required
-name="confirmPassword"
-[(ngModel)]="model.confirmPassword"
-#confirmPassword="ngModel">
-<div [hidden]="password.value === confirmPassword.value || confirmPassword.pristine" class="alert alert-danger">
-    Password dont match!
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        required
+        pattern="^[A-Za-z\d]{4,16}$"
+        name="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+      />
+      <div
+        [hidden]="password.valid || password.pristine"
+        class="alert alert-danger"
+      >
+        Password must start with ..........
+      </div>
     </div>
-</div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="confirmPassword"
+        required
+        name="confirmPassword"
+        [(ngModel)]="model.confirmPassword"
+        #confirmPassword="ngModel"
+      />
+      <div
+        [hidden]="
+          password.value === confirmPassword.value || confirmPassword.pristine
+        "
+        class="alert alert-danger"
+      >
+        Password dont match!
+      </div>
+    </div>
 
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        required
+        pattern="^[A-Z][A-Za-z]+$"
+        name="firstName"
+        [(ngModel)]="model.firstName"
+        #firstName="ngModel"
+      />
+      <div
+        [hidden]="firstName.value || firstName.pristine"
+        class="alert alert-danger"
+      >
+        First name must be start with capital Leter
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        required
+        pattern="^[A-Z][A-Za-z]+$"
+        name="lastName"
+        [(ngModel)]="model.lastName"
+        #lastName="ngModel"
+      />
+      <div
+        [hidden]="lastName.value || lastName.pristine"
+        class="alert alert-danger"
+      >
+        Last name must be start with capital Leter
+      </div>
+    </div>
 
-<div class="form-group">
-<label for="firstName">First Name</label>
-<input type="text" class="form-control" id="firstName"
-required
-pattern="^[A-Z][A-Za-z]+$"
-name="firstName"
-[(ngModel)]="model.firstName"
-#firstName="ngModel">
-<div [hidden]="firstName.value || firstName.pristine" class="alert alert-danger" >
- First name must be start with capital Leter
-</div  >
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        required
+        email
+        pattern=""
+        name="email"
+        [(ngModel)]="model.email"
+        #email="ngModel"
+      />
+      <div [hidden]="email.value || email.pristine" class="alert alert-danger">
+        Email is invalid!
+      </div>
+    </div>
 
-</div>
-<div class="form-group">
-    <label for="lastName">Last Name</label>
-<input type="text" class="form-control" id="lastName"
-required
-pattern="^[A-Z][A-Za-z]+$"
-name="lastName"
-[(ngModel)]="model.lastName"
-#lastName="ngModel">
-<div [hidden]="lastName.value || lastName.pristine" class="alert alert-danger" >
-    Last name must be start with capital Leter
-   </div  >
-</div>
-
-<div class="form-group">
-<label for="email">Email Address</label>
-<input type="email" class="form-control" id="email"
-required
-email
-pattern=""
-name="email"
-[(ngModel)]="model.email"
-#email="ngModel">
-<div [hidden]="email.value || email.pristine" class="alert alert-danger">
-Email is invalid!
-</div>
-</div>
-
-<div class="form-group">
-<label for="age">Age</label>
-<input type="number" class="form-control" id="age"
-name="age"
-[(ngModel)]="model.age"
-#age="ngModel">
-</div>
-<button type="submit" class="btn btn-success" [disabled]="registrationForm.form.invalid">Register</button>
-</form>
-<p>Already Registered? <a routerLink="/login">Login</a>.</p>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        name="age"
+        [(ngModel)]="model.age"
+        #age="ngModel"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="registrationForm.form.invalid"
+    >
+      Register
+    </button>
+  </form>
+  <p>Already Registered? <a routerLink="/login">Login</a>.</p>
 </div>

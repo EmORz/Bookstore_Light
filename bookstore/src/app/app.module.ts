@@ -19,6 +19,7 @@ import { ProductModule } from './product/product.module';
 import { UserComponent } from './user/user/user.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { UserModule } from './user/user.module';
+import { ProductService } from './product/product.service';
 
 @NgModule({
   declarations: [

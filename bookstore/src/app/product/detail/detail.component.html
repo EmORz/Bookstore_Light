@@ -1,36 +1,48 @@
-
-
-
-
-
-  <hr>
-  <div *ngIf="!selectedCause.cause"> <p style="font-size: 3cm; background-color: greenyellow;">Изберете артикул :)</p></div>
-  <div *ngIf="selectedCause.cause">
-    <p class="h3">{{selectedCause.cause}}</p>
-    <p class="text-muted h6">Номер на продукта:{{selectedCause.id}}</p>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card-img-top zoom">
-                <img width="300" height="350" src="{{selectedCause.imageUrl}}" alt="@Model.Title">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div>    
-                <dl>
-                    <dd>{{selectedCause.description}}</dd>
-                    <dt>Цена: {{selectedCause.neededAmount | number : '.2-2'}} lv</dt>
-                    <dt *ngIf="selectedCause.author">Автор: <p>{{selectedCause.author}}</p></dt>
-                    <dt *ngIf="!selectedCause.author">Автор: N/A</dt>
-                </dl>
-            </div>  
-            <label>Количество:</label>
-            <input #amountInput type="number" class="form-control" id="donatedAmount" placeholder=1>
-         
-  </div>
-  <div class="mb-2">
-    <a  (click)="makePurchase()"  class="btn btn-danger btn-lg btn-block"><i class="far fa-credit-card"></i> Купи</a>
+<hr />
+<div *ngIf="!selectedCause.cause">
+  <p style="font-size: 3cm; background-color: greenyellow;">
+    Изберете артикул :)
+  </p>
 </div>
+<div *ngIf="selectedCause.cause">
+  <p class="h3">{{ selectedCause.cause }}</p>
+  <p class="text-muted h6">Номер на продукта:{{ selectedCause.id }}</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card-img-top zoom">
+        <img
+          width="300"
+          height="350"
+          src="{{ selectedCause.imageUrl }}"
+          alt="@Model.Title"
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <dl>
+          <dd>{{ selectedCause.description }}</dd>
+          <dt>Цена: {{ selectedCause.neededAmount | number: ".2-2" }} lv</dt>
+          <dt *ngIf="selectedCause.author">
+            Автор:
+            <p>{{ selectedCause.author }}</p>
+          </dt>
+          <dt *ngIf="!selectedCause.author">Автор: N/A</dt>
+        </dl>
+      </div>
+      <label>Количество:</label>
+      <input
+        #amountInput
+        type="number"
+        class="form-control"
+        id="donatedAmount"
+        placeholder="1"
+      />
+    </div>
+    <div class="mb-2">
+      <a (click)="makePurchase()" class="btn btn-danger btn-lg btn-block"
+        ><i class="far fa-credit-card"></i> Купи</a
+      >
     </div>
   </div>
-  
-
+</div>
