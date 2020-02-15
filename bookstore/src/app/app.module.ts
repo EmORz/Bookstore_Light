@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,12 +13,8 @@ import { AuthService } from './authentication/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ListComponent } from './product/list/list.component';
 import { ProductModule } from './product/product.module';
-import { UserComponent } from './user/user/user.component';
-import { ProfileComponent } from './user/profile/profile.component';
 import { UserModule } from './user/user.module';
-import { ProductService } from './product/product.service';
 
 @NgModule({
   declarations: [

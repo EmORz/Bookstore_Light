@@ -4,20 +4,20 @@
   <div class="col-sm-4 col-md-3 col-xs-6">
 <div class="product max-height-custom">
 
-  <div *ngFor="let cause of products" (click)="selectProductHandler(cause)" >
+  <div *ngFor="let cause of productss" (click)="selectProductHandlers(cause)" >
     <div class="product-img-wrap text-center">
       <div class="row">
-        <h4 class="list-group-item-heading">{{cause.cause}}</h4>
+        <h4 class="list-group-item-heading">{{cause.title}}</h4>
       </div>
       <div>
         <h6 class="product-caption-author">{{cause.author}}</h6>
       </div>
-      <img [src]="cause.imageUrl" class="img" data-was-processed="true">                                     
+      <img [src]="cause.picture" class="img" data-was-processed="true">                                     
       </div>     
                                 <a class="product-link" href="#"></a>
                             <div class="product-caption">      
       <div class="product-caption-discount">
-          <span class="product-caption-price">{{cause.neededAmount}} лв.</span>
+          <span class="product-caption-price">{{cause.price}} лв.</span>
        
       </div>
       </div>

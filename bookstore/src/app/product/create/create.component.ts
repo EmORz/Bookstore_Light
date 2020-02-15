@@ -25,7 +25,7 @@ export class CreateComponent implements OnInit {
       
       data => {
         debugger
-        this.router.navigateByUrl('/home')
+        this.router.navigateByUrl('')
       },
       err => {
         console.log(err)
