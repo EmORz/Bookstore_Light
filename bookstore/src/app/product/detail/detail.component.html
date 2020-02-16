@@ -1,7 +1,8 @@
 <hr />
+<div *ngIf="!selectedCause._id"> <p style="font-size: 3cm; background-color: greenyellow;">Изберете артикул :)</p></div>
 
-<div>
-  <p class="h3"></p>
+<div *ngIf="selectedCause._id">
+  <p class="h3">{{selectedCause.title}}</p>
   <p class="text-muted h6">Номер на продукта:{{ selectedCause._id }}</p>
   <div class="row">
     <div class="col-md-4">

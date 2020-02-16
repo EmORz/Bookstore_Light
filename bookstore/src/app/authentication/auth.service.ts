@@ -39,7 +39,7 @@ export class AuthService{
         });
     }
     logout(){
-      debugger
+      
       this.currentUser = null;
       localStorage.removeItem('current-user');
         return this.http.post(logoutUrl, {}, { 

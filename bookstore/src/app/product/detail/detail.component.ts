@@ -14,24 +14,24 @@ export class DetailComponent implements OnInit {
   @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>
   @Input() selectedCause2: IProducts;
   
-  get selectedCause(){  return this.productService.selectedProducts}
+  get selectedCause(){  return this.productService.selectedProduct}
 
   constructor(private productService: ProductService  ,  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    debugger
-    this.productService.loading(this.activatedRoute.snapshot.params.id).subscribe((product: IProducts) => {
+    
+    this.productService.loading(this.activatedRoute.snapshot.params._id).subscribe((product: IProducts) => {
       this.productService.selectProducts(product);
   })
 }
 
 makePurchase(){
-  // debugger
-  // this.productService.purchase(+this.amountInput.nativeElement.value).subscribe(() =>{
-  //   this.productService.load();
-  //   this.amountInput.nativeElement.value = '';
+  
+  this.productService.purchase(+this.amountInput.nativeElement.value).subscribe(() =>{
+    this.productService.loading();
+    this.amountInput.nativeElement.value = '';
 
-  // })
+  })
 }
 
 }

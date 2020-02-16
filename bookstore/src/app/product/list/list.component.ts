@@ -31,8 +31,8 @@ export class ListComponent implements OnInit {
   //   this.productService.selectProduct(cause);
   // }
   selectProductHandlers(cause: IProducts) {
-    debugger
-     this.selectProducts.emit(cause);
+    
+    // this.selectProducts.emit(cause);
     this.productService.selectProducts(cause);
   }
 }
