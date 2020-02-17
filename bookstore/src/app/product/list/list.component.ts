@@ -10,10 +10,8 @@ import { IProducts } from 'src/app/shared/interfaces/products';
 })
 export class ListComponent implements OnInit {
   selectProducts: any;
-  // get products() {
-  //   return this.productService.product;
-  // }
-  get productss() {
+  
+  get products() {
     return this.productService.products;
   }
 
@@ -23,16 +21,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.productService.loading().subscribe();
-    // this.productService.load().subscribe();
   }
-
-  // selectProductHandler(cause: IProduct) {
-  //   // this.selectCause.emit(cause);
-  //   this.productService.selectProduct(cause);
-  // }
   selectProductHandlers(cause: IProducts) {
-    
-    // this.selectProducts.emit(cause);
     this.productService.selectProducts(cause);
   }
 }

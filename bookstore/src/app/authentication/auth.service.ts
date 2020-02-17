@@ -48,6 +48,7 @@ export class AuthService{
     }
 
     checkIfLogged(){
+        
         return this.currentAuthToken === localStorage.getItem('authtoken');
     }
 

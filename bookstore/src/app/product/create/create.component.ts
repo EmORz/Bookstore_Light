@@ -32,5 +32,15 @@ export class CreateComponent implements OnInit {
       }
     )
   }
+  logout(){
+    debugger
+    this.authService.logout()
+    .subscribe( data => {
+      localStorage.clear();
+      this.authService.authtoken = "";
+      this.router.navigateByUrl('/login')
+
+    })
+  }
 
 }

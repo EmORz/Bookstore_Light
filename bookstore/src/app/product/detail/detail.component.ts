@@ -12,9 +12,9 @@ import { IProducts } from 'src/app/shared/interfaces/products';
 export class DetailComponent implements OnInit {
 
   @ViewChild('amountInput', { static: false }) amountInput: ElementRef<HTMLInputElement>
-  @Input() selectedCause2: IProducts;
+  @Input() selectedProduct2: IProducts;
   
-  get selectedCause(){  return this.productService.selectedProduct}
+  get selectedProduct(){  return this.productService.selectedProduct}
 
   constructor(private productService: ProductService  ,  private activatedRoute: ActivatedRoute) { }
 

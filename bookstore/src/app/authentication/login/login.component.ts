@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
     localStorage.setItem('roles', data['_kmd']['roles']);
     localStorage.setItem('username', data['username']);
     
+    
     this.router.navigateByUrl('');
 
   }
