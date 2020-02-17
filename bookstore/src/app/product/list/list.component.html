@@ -1,35 +1,29 @@
 <h1>Products</h1>
-
-<div class="col" data-gutter="15">                
+<div class="col" data-gutter="15">
   <div class="col-sm-4 col-md-3 col-xs-6">
-<div class="product max-height-custom">
-
-  <div *ngFor="let product of products" (click)="selectProductHandlers(product)" >
-    <div class="product-img-wrap text-center">
-      <div class="row">
-        <h4 class="list-group-item-heading">{{product.title}}</h4>
-      </div>
-      <div>
-        <h6 class="product-caption-author">{{product.author}}</h6>
-      </div>
-      <img [src]="product.picture" class="img" data-was-processed="true">                                     
-      </div>     
-                                <a class="product-link" redirectAction="#"></a>
-                            <div class="product-caption">      
-      <div class="product-caption-discount">
-          <span class="product-caption-price">{{product.price}} лв.</span>
-       
-      </div>
-      </div>
-      <hr>
-    
-    </div>
-
-</div>
-</div>
+    <div class="product max-height-custom">
+      <div
+        *ngFor="let product of products"
+        (click)="selectProductHandlers(product)"
+      >
+        <div class="product-img-wrap text-center">
+          <div >
+            <h4 class="list-group-item-heading">{{ product.title }}</h4>
+          </div>
+          <div>
+            <h6 class="product-caption-author">{{ product.author }}</h6>
+          </div>
+          <div>
+            <img [src]="product.picture" class="img" data-was-processed="true" />
+          </div>
+            <div class="product-caption-discount">
+              <p class="product-caption-price">{{ product.price }} лв.</p>
+            </div>
+        </div>
  
-
-</div>
-        
-
     
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
