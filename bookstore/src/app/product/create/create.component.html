@@ -35,7 +35,7 @@ class="nav-link"  (click)="logout()">
                 class="form-control"
                 id="author"
                 required
-                pattern="^[A-Z][a-z\d]+ [A-Z][a-z\d]+$"
+                pattern="^[a-zA-Z]+ [a-zA-Z]+$"
                 name="author"
                 [(ngModel)]="model.author"
                 #author="ngModel"
@@ -44,17 +44,17 @@ class="nav-link"  (click)="logout()">
                 [hidden]="author.valid || author.pristine"
                 class="alert alert-danger"
               >
-                Enter two names of author, with capital first letters!
+                Enter first and last name of author!
               </div>
             </div>
             <div class="form-group">
               <label for="price">Price</label>
               <input
-                type="number"
+                type=""
                 class="form-control"
                 id="price"
                 required
-                pattern="^[0-9]+$"
+                pattern="^[+-]?\d*\.\d+$|^[+-]?\d+(\.\d*)?$"
                 name="price"
                 [(ngModel)]="model.price"
                 #price="ngModel"
@@ -63,7 +63,7 @@ class="nav-link"  (click)="logout()">
                 [hidden]="price.valid || price.pristine"
                 class="alert alert-danger"
               >
-                Price must be number!
+                Price must be number/floating point number with decimal separator '.'!
               </div>
             </div>
             <div class="form-group">
@@ -72,36 +72,38 @@ class="nav-link"  (click)="logout()">
                 type="number"
                 class="form-control"
                 id="quantity"
-                pattern="^[0-9]+$"
+                pattern="^[+]?[0-9]+$"
                 required
                 name="quantity"
                 [(ngModel)]="model.quantity"
                 #quantity="ngModel"
+                placeholder="Enter quantity"
               />
               <div
                 [hidden]="quantity.valid || quantity.pristine"
                 class="alert alert-danger"
               >
-                Quantity must start with ..........
+                Quantity must whole positive number!
               </div>
             </div>
             <div class="form-group">
               <label for="description">description</label>
-              <input
+              <textarea
                 type="text"
                 class="form-control"
                 id="description"
                 required
-                pattern="^[A-Z][a-z\d]+$"
+                pattern="^([^<>]){1,150}$"
                 name="description"
                 [(ngModel)]="model.description"
                 #description="ngModel"
-              />
+                placeholder="Enter some description"
+              ></textarea>
               <div
                 [hidden]="description.valid || description.pristine"
                 class="alert alert-danger"
               >
-                description must start with ..........
+                Description must be between 1 and 150 symbols!
               </div>
             </div>
             <div class="form-group">

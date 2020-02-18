@@ -1,4 +1,8 @@
 <h1>Products</h1>
+<div *ngIf="!products">
+<h1>Please login in system, to see all Products!    <a class="nav-link" routerLink="/login">
+  <h2 style="color: #00ff00;">Login</h2></a> </h1>
+</div>
 <div class="col" data-gutter="15">
   <div class="col-sm-4 col-md-3 col-xs-6">
     <div class="product max-height-custom">
