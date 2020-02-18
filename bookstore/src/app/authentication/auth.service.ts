@@ -15,6 +15,8 @@ export class AuthService{
 
     private currentAuthToken: string;
     private currentRoleToken: string;
+    private currentUsername: string;
+
   isLogged: any;
   currentUser: { model: any } = null;
 
@@ -54,6 +56,12 @@ export class AuthService{
 
     get authtoken(){
         return this.currentAuthToken;
+    }
+    get username(){
+        return this.currentUsername;
+    }
+    set username(value: string){
+         this.currentUsername = value ;
     }
     get roles(){
         return this.currentRoleToken;
