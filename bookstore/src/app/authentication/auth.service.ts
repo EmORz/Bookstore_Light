@@ -16,6 +16,7 @@ export class AuthService{
     private currentAuthToken: string;
     private currentRoleToken: string;
     private currentUsername: string;
+    private currentEmail: string;
 
   isLogged: any;
   currentUser: { model: any } = null;
@@ -49,8 +50,7 @@ export class AuthService{
         });
     }
 
-    checkIfLogged(){
-        
+    checkIfLogged(){        
         return this.currentAuthToken === localStorage.getItem('authtoken');
     }
 
@@ -62,6 +62,12 @@ export class AuthService{
     }
     set username(value: string){
          this.currentUsername = value ;
+    }
+    get email(){
+        return this.currentEmail;
+    }
+    set email(value: string){
+         this.currentEmail = value ;
     }
     get roles(){
         return this.currentRoleToken;

@@ -13,8 +13,14 @@ export class ProfileComponent implements OnInit {
   form: FormGroup;
 
   get currentUser() {
-    let username = this.authService.username;    
+    let username = this.authService.username;   
+ 
     return username
+  }
+  get currentEmail() {
+    let email = this.authService.email;   
+ 
+    return email
   }
 
   constructor(
@@ -24,6 +30,7 @@ export class ProfileComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
+    
       email: [
         "",
         [

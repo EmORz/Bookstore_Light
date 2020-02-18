@@ -1,4 +1,10 @@
 <h1>Products</h1>
+<div *ngIf='isAdmin'>
+<h3>Wellcome admin {{currentUser}}</h3>
+</div>
+<div *ngIf='!isAdmin'>
+  <h3>Wellcome {{currentUser}}</h3>
+  </div>
 <div *ngIf="!products">
 <h1>Please login in system, to see all Products!    <a class="nav-link" routerLink="/login">
   <h2 style="color: #00ff00;">Login</h2></a> </h1>

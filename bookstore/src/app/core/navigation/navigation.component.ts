@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 export class NavigationComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
+  get currentUser() {
+    let username = this.authService.username;    
+    return username
+  }
   ngOnInit() {
   }
 
@@ -23,7 +27,7 @@ export class NavigationComponent implements OnInit {
     .subscribe( data => {
       localStorage.clear();
       this.authService.authtoken = "";
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/login');
 
     })
   }
