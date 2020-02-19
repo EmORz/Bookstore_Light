@@ -35,8 +35,14 @@
       />
     </div>
     <div class="mb-2">
-      <a (click)="makePurchase()" class="btn btn-danger btn-lg btn-block"
+      <a (click)="makePurchase()" class="btn btn-success btn-lg btn-block"
         ><i class="far fa-credit-card"></i> Купи</a
+      >
+    </div>
+    <hr>
+    <div *ngIf="isHasCredentials()" class="mb-2">
+      <a (click)="removeProduct()" class="btn btn-danger btn-lg btn-block"
+        ><i class="far fa-credit-card"></i> Изтрий продукта!</a
       >
     </div>
   </div>

@@ -29,10 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   successfulLogin(data) {
-    debugger
     this.authService.authtoken = data["_kmd"]["authtoken"];
     this.authService.roles = data["_kmd"]["roles"];
-debugger
     this.authService.username = data["username"];
     this.authService.email = data["email"];
     localStorage.setItem("authtoken", data["_kmd"]["authtoken"]);
