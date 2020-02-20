@@ -42,9 +42,12 @@ export class DetailComponent implements OnInit {
     return false;
   }
   makePurchase() {
+    debugger
     this.productService
       .purchase(+this.amountInput.nativeElement.value)
       .subscribe(() => {
+        debugger
+        console.log('its ok!')
         this.productService.loading();
         this.amountInput.nativeElement.value = "";
       });

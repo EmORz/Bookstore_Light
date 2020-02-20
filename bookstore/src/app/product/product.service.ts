@@ -35,10 +35,21 @@ export class ProductService {
   }
 
   purchase(quantity: number) {
-    return this.http.patch<IProduct>(
+    debugger;
+    return this.http.put<IProducts>(
       `${productUrl}${this.selectedProduct._id}`,
       {
-        body: { totalMoney: this.selectedProduct.price * quantity }
+        "_id": this.selectedProduct._id,
+        "title": this.selectedProduct.title,
+        "author": this.selectedProduct.author,
+        "description": this.selectedProduct.description,
+        "picture": this.selectedProduct.picture,
+        "price": this.selectedProduct.price,
+        "quantity": this.selectedProduct.quantity - quantity,
+        "totalMone": this.selectedProduct.totalMone+=(+this.selectedProduct.price * +quantity) 
+      },
+      {
+        headers: this.createAuthHeaders("Kinvey")
       }
     );
   }

@@ -14,7 +14,7 @@ export class CreateComponent implements OnInit {
 
   model: CreateModel;
   constructor(private authService: AuthService, private router: Router, private productService: ProductService) { 
-    this.model = new CreateModel('','',16, 9, '','')
+    this.model = new CreateModel('','',16, 9, '',0)
   }
 
   ngOnInit() {
