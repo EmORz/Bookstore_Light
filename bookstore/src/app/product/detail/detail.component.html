@@ -34,10 +34,13 @@
         placeholder="1"
       />
     </div>
-    <div class="mb-2">
+    <div *ngIf="isAvailable()" class="mb-2">
       <a (click)="makePurchase()" class="btn btn-success btn-lg btn-block"
         ><i class="far fa-credit-card"></i> Купи</a
       >
+    </div>
+    <div *ngIf="!isAvailable()" class="mb-2">
+      <h3>Product is out of order!</h3>
     </div>
     <hr>
     <div *ngIf="isHasCredentials()" class="mb-2">
